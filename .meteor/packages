@@ -11,3 +11,5 @@ coffeescript
 mquandalle:jade
 stylus
 muicss:mui
+kadira:flow-router
+meteorhacks:flow-layout
