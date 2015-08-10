@@ -1,0 +1,10 @@
+{
+  "name": "phet-launcher",
+  "version": "1.0.0",
+  "dependencies": {
+    "nw-builder": "^2.0.2",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "private": true
+}
