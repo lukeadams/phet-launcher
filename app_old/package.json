@@ -1,0 +1,13 @@
+{
+  "main": "app://localhost.localhost/index.html",
+  "name": "PhET Launcher",
+  "description": "Launches PhET sims",
+  "version": "0.1.0",
+  "keywords": [ "node-webkit" ],
+  "window": {
+    "title": "node-webkit demo",
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
