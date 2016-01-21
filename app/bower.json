@@ -1,0 +1,22 @@
+{
+  "name": "phet-launcher",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Luke Adams <luke4450@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lukeadams/phet-launcher",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mui": "~0.2.10"
+  }
+}
