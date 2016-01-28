@@ -33,4 +33,24 @@ $(function(){
 	$(document).keydown(function(e){
 		$('#search').focus()
 	});
+	$('.sim').click(function(e){
+		url_hash = $(e.currentTarget).attr('data-sim-urlhash')
+
+		sim = sims.filter(function(el, index, array){
+			return (el[':url_hash'] == url_hash)
+		})[0]
+
+		sim_path = Path.join(bundle_root, sim[':url_hash'], sim[':file_name'])
+
+		switch(sim[':type']){
+			case ':java':
+				break;
+
+			case ':flash':
+				window.open(sim_path)
+
+			case ':html':
+				window.open(sim_path)
+		}
+	})
 })
