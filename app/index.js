@@ -12,3 +12,18 @@ var sims = jsyaml.load(fs.readFileSync(Path.join(bundle_root, "config.yml")))
 			</div>
 		`).appendTo($('#sim-list'))
 	}
+	$('#search').keyup(function(event){
+		_text = event.delegateTarget.value
+		$('.sim').each(function(num, sim){
+			sim = $(sim)
+
+			sim.removeClass('hidden') //Unhide them all
+
+			_name = sim.children(".name").first().text()
+			_matches = (_name.toLowerCase().indexOf(_text.toLowerCase()) != -1)
+
+			if (!_matches) {
+				sim.addClass('hidden')
+			}
+		})
+	})
