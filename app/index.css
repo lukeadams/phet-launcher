@@ -1,0 +1,22 @@
+.search-input {
+	border: none;
+	width: 100%;
+}
+
+.search {
+	cursor: text;
+	width: 40%;
+}
+
+.search-table {
+	align: center;
+}
+
+.left {
+	width: 30%;
+	height: 10px;
+	float: left;
+}
+input:focus{
+    outline: none;
+}
