@@ -20,6 +20,20 @@
 input:focus{
     outline: none;
 }
+.sim-list {
+	width: 100%;
+}
+.sim img {
+	width: 100%;
+}
+.sim p {
+	text-align: center;
+
+}
+.sim {
+	width: 13vw;
+	height: 13vw;
+	float: left;
 body {
 	background-color: #DFEFFF;
 }
