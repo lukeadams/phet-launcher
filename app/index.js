@@ -29,4 +29,8 @@ $(function(){
 			}
 		})
 	})
+	//Better search
+	$(document).keydown(function(e){
+		$('#search').focus()
+	});
 })
