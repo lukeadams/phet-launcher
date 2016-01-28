@@ -3,6 +3,8 @@ var fs = require('fs');
 var Path = require('path')
 var bundle_root = Path.resolve("../../phet-scraper/bundle/")
 var sims = jsyaml.load(fs.readFileSync(Path.join(bundle_root, "config.yml")))
+//Dom ready
+$(function(){
 	for (sim of sims) {
 		sim_root = Path.join(bundle_root, sim[':url_hash'])
 		var _dom = $(`
@@ -27,3 +29,4 @@ var sims = jsyaml.load(fs.readFileSync(Path.join(bundle_root, "config.yml")))
 			}
 		})
 	})
+})
