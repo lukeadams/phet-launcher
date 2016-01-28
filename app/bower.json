@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "mui": "~0.2.10"
+    "mui": "~0.2.10",
+    "js-yaml": "~3.5.2",
+    "jquery": "~2.2.0"
   }
 }
