@@ -34,6 +34,20 @@ input:focus{
 	width: 13vw;
 	height: 13vw;
 	float: left;
+	border-radius: 4px 4px 4px 4px;
+
+	box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
+	transition: box-shadow .2s linear;
+
+	overflow: hidden;
+	margin: 1vw;
+}
+
+.sim:hover{
+	box-shadow: inset 0px 0px 76px -25px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+
 body {
 	background-color: #DFEFFF;
 }
