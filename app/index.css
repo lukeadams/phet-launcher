@@ -23,3 +23,6 @@ input:focus{
 body {
 	background-color: #DFEFFF;
 }
+.hidden {
+	display: none;
+}
