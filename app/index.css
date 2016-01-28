@@ -20,6 +20,7 @@
 input:focus{
     outline: none;
 }
+
 .sim-list {
 	width: 100%;
 }
@@ -51,6 +52,7 @@ input:focus{
 body {
 	background-color: #DFEFFF;
 }
+
 .hidden {
 	display: none;
 }
