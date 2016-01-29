@@ -1,0 +1,11 @@
+{
+  "name": "phet-launcher",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "devDependencies": {
+    "node-7z":"",
+    "nw-builder": ""
+  },
+  "private": true
+}
