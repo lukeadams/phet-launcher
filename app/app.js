@@ -1,10 +1,12 @@
-var jsyaml = require("./bower_components/js-yaml/dist/js-yaml.min.js")
 var fs = require('fs');
 var Path = require('path')
+var jsyaml = require(Path.join(__dirname, "bower_components/js-yaml/dist/js-yaml.min.js"))
+
 var BrowserWindow = require('electron').remote.BrowserWindow;
-var bundle_root = Path.resolve(__dirname, "../../phet-scraper/bundle/")
+var bundle_root = Path.resolve(__dirname, "bundle")
 var sims = jsyaml.load(fs.readFileSync(Path.join(bundle_root, "config.yml")))
 
+var child_proc = require('child_process')
 //Dom ready
 $(function(){
 	for (sim of sims) {
@@ -45,32 +47,36 @@ $(function(){
 			return (el[':url_hash'] == url_hash)
 		})[0]
 
-		sim_path = 'file://' + Path.join(bundle_root, sim[':url_hash'], sim[':file_name'])
-		switch(sim[':type']){
-			case ':java':
-				launchJava(sim_path)
-
-			case ':flash':
-				launchFlash(sim_path)
-
-			case ':html':
-				launchHtml(sim_path)
+		sim_path = Path.join(bundle_root, sim[':url_hash'], sim[':file_name'])
+		console.log(sim[':type'])
+		if (sim[':type'] == ':java'){
+			launchJava(sim_path);
+		}
+		else if (sim[':type'] == ':flash'){
+			launchHtml(sim_path);
+		} else if (sim[':type'] == ':html'){
+			launchHtml(sim_path)
 		}
 	})
 })
 
 function launchHtml(path){
-	var win = new BrowserWindow({ width: 800, height: 600, show: false, webPreferences:{nodeIntegration:false}});
+	var win = new BrowserWindow({ width: 800, height: 600, show: false, webPreferences:{nodeIntegration:false, plugins: true, webSecurity:false}});
 	win.on('closed', function() {
 	  win = null;
 	});
-
-	win.loadURL('file:///Users/lukeadams/Projects/phet-scraper/bundle/2b16734f6d234f10511995c4e2c28ac838ab20ba/acid-base-solutions_en.html');
+	win.setMenu(null);
 	win.openDevTools()
+	win.loadURL('file://' + path);
 	win.show();
 }
-function launchJava(path){
-
+function launchFlash(path){
+	//('file://' + path)
+	alert("This is a flash sim; launch it in Chrome.")
+}
+function launchJava(path){///Users/lukeadams/Projects/phet-launcher/app/java/osx/Contents/Home/bin
+	const java_binary = Path.join(__dirname, 'java', 'windows', 'bin', 'java.exe')
+	child_proc.exec(`${java_binary} -jar "${path}"`)
 }
 
 
