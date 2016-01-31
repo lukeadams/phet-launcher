@@ -1,20 +1,23 @@
 gulp        = require 'gulp'
-NwBuilder   = require 'nw-builder'
-request     = require 'request'
-
+packager 	= require 'electron-packager'
+path 		= require 'path'
 
 gulp.task 'default', ()->
 
 gulp.task 'build', (finish)->
-  #Get Java plugins
-  #Currently OSX plugin only
-  nw = new NwBuilder({
-    files: ['./app/**', './plugins/Java-Plugin.bundle/**']
-    platforms: ['osx64']
-    version: '0.12.3'
-    cacheDir: './cache/nw'
-  })
+	#Get Java plugins
+	#Currently OSX plugin only
+	console.log path.join __dirname, 'app'
+	packager {
+		arch: 			'x64'
+		dir:			path.join __dirname, 'app'
+		platform:		'win32'	#OS X not really needed...
+		version:		'0.36.7'
+		overwrite:		true
+		asar: 			false 	#Breaks Java sims
+		icon:			'./icons/phet-logo'
+		#icon: 			'./assets/icon' #Create an icon
+		out:			path.join __dirname, 'out'
 
-  x = new Future
-  nw.build (err)->
-    finish(err)
+	}, (err, appPath)->
+		console.log err + appPath
