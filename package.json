@@ -1,0 +1,27 @@
+{
+  "name": "phet-launcher",
+  "version": "1.0.0",
+  "description": "![logo](https://i.imgur.com/uPWGfcw.png) ## What? Many of the simulations require an old version of Java / Macromedia Flash. This has all required plugins packaged within it, so you don't have to use old plugin versions globally.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "electron-packager": "^5.2.1",
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukeadams/phet-launcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukeadams/phet-launcher/issues"
+  },
+  "homepage": "https://github.com/lukeadams/phet-launcher#readme"
+}
