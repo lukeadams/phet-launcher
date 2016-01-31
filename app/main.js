@@ -6,6 +6,9 @@ const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
+//Pepper flash
+app.commandLine.appendSwitch('ppapi-flash-path', "/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/Versions/48.0.2564.97/Google Chrome Framework.framework/Internet Plug-Ins/PepperFlash/PepperFlashPlayer.plugin");
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600});
