@@ -6,4 +6,8 @@ This has all required plugins packaged within it, so you don't have to use old p
 
 ## How?
 This is a desktop app packaged with nw.js
-Currently targeted for Windows. All you have to really do for OSX/Linux is contribute a link to the plugins.
+Currently targeted for Windows. All you have to really do for OSX/Linux is contribute a link to Pepper flash.
+
+##Screenshots
+![List](https://i.imgur.com/DuORLGU.png)
+![Search](https://i.imgur.com/VxaJ46I.png)
